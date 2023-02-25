@@ -16,7 +16,9 @@ class Program
 
         //CG_AsciiArt.Run();
         //CG_SudokuValidator.Run();
-        CG_LogicGates.Run();
+        //CG_LogicGates.Run();
+        //LT372.Run();
+        LT205.Run();
 
         Console.ReadKey();
     }
