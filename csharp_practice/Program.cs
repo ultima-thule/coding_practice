@@ -11,8 +11,12 @@ class Program
 
         //Console.WriteLine($"Result: {result}");
 
-        Singleton sin = Singleton.Instance;
-        Singleton sin2 = Singleton.Instance;
+        //Singleton sin = Singleton.Instance;
+        //Singleton sin2 = Singleton.Instance;
+
+        //CG_AsciiArt.Run();
+        //CG_SudokuValidator.Run();
+        CG_LogicGates.Run();
 
         Console.ReadKey();
     }
