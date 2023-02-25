@@ -41,20 +41,11 @@ namespace csharp_practice
             _roots.Add(root);
         }
 
-        public bool AreTwo()
-        {
-            return _roots.Count == 2;
-        }
+        public bool AreTwo() => _roots.Count == 2;
 
-        public bool IsOne()
-        {
-            return _roots.Count == 1;
-        }
+        public bool IsOne() => _roots.Count == 1;
 
-        public bool IsZero()
-        {
-            return _roots.Count == 0;
-        }
+        public bool IsZero() => _roots.Count == 0;
 
         public double? GetItem(int index)
         {

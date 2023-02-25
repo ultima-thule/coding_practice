@@ -42,6 +42,17 @@ namespace csharp_practice
 
         private static string Calculate(string operation, bool[] signalA, bool[] signalB)
         {
+            Dictionary<string, Func<bool, bool, bool>> dictOperations = new Dictionary<string, Func<bool, bool, bool>>()
+            {
+                { "AND", (argA, argB) => argA & argB},
+                {"OR", (argA, argB) => argA | argB },
+                {"XOR", (argA, argB) => argA ^ argB },
+                { "NAND", (argA, argB) => !(argA & argB)},
+                { "NOR", (argA, argB) => !(argA | argB)},
+                { "NXOR", (argA, argB) => !(argA ^ argB)},
+            };
+            
+
             bool[] res = new bool[signalA.Length];
             string result = "";
 
@@ -49,39 +60,15 @@ namespace csharp_practice
             {
                 bool argA = signalA[i];
                 bool argB = signalB[i];
-                bool stepResult = true;
+                bool stepResult = dictOperations[operation](argA, argB);
 
-                switch (operation)
-                {
-                    case "AND":
-                        stepResult = argA & argB;
-                        break;
-                    case "OR":
-                        stepResult = argA | argB;
-                        break;
-                    case "XOR":
-                        stepResult = argA ^ argB;
-                        break;
-                    case "NAND":
-                        stepResult = !(argA & argB);
-                        break;
-                    case "NOR":
-                        stepResult = !(argA | argB);
-                        break;
-                    case "NXOR":
-                        stepResult = !(argA ^ argB);
-                        break;
-                }
                 result += TransformOutputSignal(stepResult);
            }
 
             return result;
         }
 
-        private static string TransformOutputSignal(bool data)
-        {
-            return data ? "-" : "_"; 
-        }
+        private static string TransformOutputSignal(bool data) => data ? "-" : "_"; 
 
         private static bool[] TransformInputSignal(string inputSignal)
         {

@@ -48,10 +48,7 @@ namespace csharp_practice
         }
                
 
-        static bool CheckIsValid(int[,] input)
-        {
-            return ValidateRowsCols(input);
-        }
+        static bool CheckIsValid(int[,] input) => ValidateRowsCols(input);
 
         public static void Run()
         {
