@@ -18,7 +18,9 @@ class Program
         //CG_SudokuValidator.Run();
         //CG_LogicGates.Run();
         //LT372.Run();
-        LT205.Run();
+        //LT205.Run();
+        LT206 lt = new LT206();
+        lt.Run();
 
         Console.ReadKey();
     }
