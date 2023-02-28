@@ -19,9 +19,12 @@ class Program
         //CG_LogicGates.Run();
         //LT372.Run();
         //LT205.Run();
-        LT206 lt = new LT206();
-        lt.Run();
+        //LT206 lt = new LT206();
+        //lt.Run();
 
+        EUL_4.Run();
+
+        
         Console.ReadKey();
     }
 }
