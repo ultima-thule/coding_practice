@@ -22,9 +22,11 @@ class Program
         //LT206 lt = new LT206();
         //lt.Run();
 
-        EUL_4.Run();
+        //EUL_4.Run();
+        LINQ_Exercises.Exercise1();
 
-        
+
+
         Console.ReadKey();
     }
 }
