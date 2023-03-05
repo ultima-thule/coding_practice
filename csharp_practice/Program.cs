@@ -23,7 +23,7 @@ class Program
         //lt.Run();
 
         //EUL_4.Run();
-        LINQ_Exercises.Exercise1();
+        LINQ_Exercises.Exercise3();
 
 
 
