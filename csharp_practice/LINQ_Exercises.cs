@@ -109,5 +109,41 @@ namespace csharp_practice
             
             Console.WriteLine(result);
         }
+
+        //In a motor sport competition, a player's points total for the season is the sum of all the points earned in each race, but the three worst results
+        //are not counted towards the total. Calculate the following player's score based on the points earned in each round: "10,5,0,8,10,1,4,0,10,1"
+        public static void Exercise8()
+        {
+            string input = "10,5,0,8,10,1,4,0,10,1";
+
+            var result = input.Split(",")
+                .Select(int.Parse)
+                .OrderBy(n => n)
+                .Skip(3)
+                .Sum();
+
+            Console.WriteLine(result);
+        }
+
+        //The following sequence has 100 entries.Sample it by taking every 5th value and discarding the rest.The output should begin with 24,53,77,...
+        //"0,6,12,18,24,30,36,42,48,53,58,63,68,72,77,80,84,87,90,92,95,96,98,99,99,100,99,99,98,96,95,92,90,87,84,80,77,72,68,63,58,53,48,42,36,30,24,18,12,6,0,-6,-12,-18,-24,-30,-36,-42,-48,-53,-58,-63,-68,-72,-77,-80,-84,-87,-90,-92,-95,-96,-98,-99,-99,-100,-99,-99,-98,-96,-95,-92,-90,-87,-84,-80,-77,-72,-68,-63,-58,-53,-48,-42,-36,-30,-24,-18,-12,-6"
+        public static void Exercise9()
+        {
+            string input = "0,6,12,18,24,30,36,42,48,53,58,63,68,72,77,80,84,87,90,92,95,96,98,99,99,100,99,99,98,96,95,92,90,87,84,80,77,72,68,63,58,53,48,42,36,30,24,18,12,6,0,-6,-12,-18,-24,-30,-36,-42,-48,-53,-58,-63,-68,-72,-77,-80,-84,-87,-90,-92,-95,-96,-98,-99,-99,-100,-99,-99,-98,-96,-95,-92,-90,-87,-84,-80,-77,-72,-68,-63,-58,-53,-48,-42,-36,-30,-24,-18,-12,-6";
+
+            var result = input.Split(",")
+                .Where((_, index) => index % 5 == 0);
+
+            Console.WriteLine(result);
+        }
+
+        public static void Exercise10()
+        {
+            //Yes won the vote, but how many more Yes votes were there than No votes?
+            string input = "Yes,Yes,No,Yes,No,Yes,No,No,No,Yes,Yes,Yes,Yes,No,Yes,No,No,Yes,Yes";
+
+            var result = input.Split(",")
+                .Sum(n => n == "Yes" ? 1 : -1);
+        }
     }
 }
